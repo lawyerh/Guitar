@@ -1,0 +1,236 @@
+
+//********** Variables ***********//
+
+$color-primary: #7e2196;
+$color-primary-light: #8d3ea0;
+$color-primary-dark: #420551;
+
+$color-grey-dark: #777;
+$color-white: #fff;
+$color-black: #000;
+
+//******** Keyframes *********//
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+
+    85% {
+        opacity: 1;
+        transform: translateX(1rem)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(10rem)            
+    }
+
+    85% {
+        opacity: 1;
+        transform: translateX(-2rem)       
+    }
+
+    93% {
+        opacity: 1;
+        transform: translateX(.5rem)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0)
+    }
+}
+
+@keyframes expand {
+    0% {
+        transform: rotate(0deg)
+    }
+    100% {
+        transform: rotate(359deg)
+    }
+}
+
+@keyframes moveInBottom {
+    0% {
+        transform: translateY(2rem);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+//*********** Normalize & Reset **************//
+
+*,
+*::after,
+*::before {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    /* font-size: 16px; */
+    line-height: 1.7;
+    color: $color-white;
+    padding: 3rem;
+    box-sizing: border-box;
+}
+
+
+//************ Components ************//
+
+
+.header {
+    height: 95vh;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.6),
+        rgba($color-primary-dark, 0.85)),
+        url(../img/guitarheader.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85vh);
+
+    &__logo-box {
+        position: absolute;
+        top: 3rem;
+        left: 3rem;
+    }
+
+    &__logo {
+        height: 18rem;
+
+        &:hover {
+            animation: expand 1.2s linear;
+            animation-iteration-count: infinite;
+            
+        }
+    }
+
+    &__text-box {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}// .header close
+
+
+.heading-primary {
+    color: $color-white;
+    text-transform: uppercase;
+
+    backface-visibility: hidden;
+    margin-bottom: 5rem;
+
+    &--main {
+        display: block;
+        font-size: 5rem;
+        font-weight: 400;
+        letter-spacing: 2rem;
+        margin-left: 1.2rem;
+
+        animation: moveInLeft 1s ease-in;
+    }
+
+    &--sub {
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.5rem;
+
+        animation: moveInRight 1s ease-in 1s;
+        animation-fill-mode: backwards;
+    }
+
+ } // .heading-primary close
+
+
+
+/* .btn and :state of button
+:link is new unclicked link
+:visited is link after it's been clicked once
+:hover is on hover
+:active is during click
+*/
+
+.btn {
+
+    &:link, 
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: 2rem;
+        padding: 1.5rem 4rem;
+        display: inline-block;
+        border-radius: 10rem;
+        transition: all .1s;
+        position: relative;
+    }
+    
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 1rem rgba($color-black, .3);
+    }
+    
+    &:hover::after{
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+    }
+    
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 .5rem 1rem rgba($color-black, .3)
+    }
+    
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .3s;
+    }
+
+    &--white {
+        background-color: $color-white;
+        color: $color-grey-dark;;
+    }
+    
+    &--white::after{
+        background-color: $color-white;
+    }
+    
+    &--animate {
+        animation: moveInBottom 1s ease-in 1.5s;
+        animation-fill-mode: backwards;
+        
+    }
+} // .btn close
+

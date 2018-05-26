@@ -1,0 +1,64 @@
+/* .btn and :state of button
+:link is new unclicked link
+:visited is link after it's been clicked once
+:hover is on hover
+:active is during click
+*/
+
+.btn {
+
+    &:link, 
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: 2rem;
+        padding: 1.5rem 4rem;
+        display: inline-block;
+        border-radius: 10rem;
+        transition: all .1s;
+        position: relative;
+    }
+    
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 1rem rgba($color-black, .3);
+    }
+    
+    &:hover::after{
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+    }
+    
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 .5rem 1rem rgba($color-black, .3)
+    }
+    
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .3s;
+    }
+
+    &--white {
+        background-color: $color-white;
+        color: $color-grey-dark;;
+    }
+    
+    &--white::after{
+        background-color: $color-white;
+    }
+    
+    &--animate {
+        animation: moveInBottom 1s ease-in 1.5s;
+        animation-fill-mode: backwards;
+        
+    }
+} // .btn close

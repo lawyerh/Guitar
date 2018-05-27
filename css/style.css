@@ -179,13 +179,40 @@ body {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
   transform: translateY(0); }
 
+.composition {
+  position: relative; }
+  .composition__photo {
+    width: 50%;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    position: absolute;
+    z-index: 10;
+    transition: all .15s;
+    outline-offset: 2rem; }
+    .composition__photo--p1 {
+      left: 0;
+      top: 3rem; }
+    .composition__photo--p2 {
+      left: 30%;
+      top: 18.5rem; }
+    .composition__photo--p3 {
+      right: 3rem;
+      top: 1rem; }
+    .composition__photo:hover {
+      outline: 1.5rem solid #902ea8;
+      transform: scale(1.1) translateY(-1rem);
+      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+      z-index: 20; }
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.9); }
+
 .header {
-  height: 95vh;
+  height: 90vh;
   background-image: linear-gradient(to right bottom, rgba(141, 62, 160, 0.6), rgba(54, 4, 66, 0.85)), url(../img/guitarheader.jpg);
   background-size: cover;
   background-position: center;
   position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85vh); }
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 75vh); }
   .header__logo-box {
     position: absolute;
     top: 3rem;
@@ -232,5 +259,5 @@ body {
 
 .section-about {
   background-color: #f7f7f7;
-  padding: 25rem 0;
+  padding: 22rem 0;
   margin-top: -20vh; }

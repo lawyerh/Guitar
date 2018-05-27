@@ -206,6 +206,23 @@ body {
   .composition:hover .composition__photo:not(:hover) {
     transform: scale(0.9); }
 
+.feature-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  transition: transform .3s; }
+  .feature-box:hover {
+    transform: translateY(-2rem) scale(1.1); }
+  .feature-box__icon {
+    font-size: 6rem;
+    margin-bottom: .5rem;
+    background-image: linear-gradient(to right, #360442, #8d3ea0);
+    -webkit-background-clip: text;
+    color: transparent; }
+
 .header {
   height: 90vh;
   background-image: linear-gradient(to right bottom, rgba(141, 62, 160, 0.6), rgba(54, 4, 66, 0.85)), url(../img/guitarheader.jpg);
@@ -261,3 +278,13 @@ body {
   background-color: #f7f7f7;
   padding: 22rem 0;
   margin-top: -20vh; }
+
+.section-features {
+  margin-top: -9rem;
+  padding: 20rem 0;
+  background-image: linear-gradient(to right bottom, rgba(141, 62, 160, 0.6), rgba(54, 4, 66, 0.8)), url("../img/music.jpg");
+  background-size: cover;
+  background-position: bottom;
+  transform: skewY(4deg); }
+  .section-features > * {
+    transform: skewY(-4deg); }

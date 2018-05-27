@@ -160,15 +160,13 @@ body {
   animation: moveInBottom 1s ease-in 1.5s;
   animation-fill-mode: backwards; }
 
-.btn--text {
-  color: red; }
-  .btn--text:link, .btn--text:visted {
-    font-size: 20rem;
-    color: #902ea8;
-    display: inline-block;
-    text-decoration: none;
-    border-bottom: 1px solid #902ea8;
-    padding: 3px; }
+.btn--texts:link, .btn--texts:visited {
+  font-size: 2rem;
+  color: #902ea8;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid #902ea8;
+  padding: 3px; }
 
 .header {
   height: 95vh;

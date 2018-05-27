@@ -62,12 +62,10 @@
         
     }
 
-    &--text {
-    
-        color: red;
+    &--texts {
         &:link,
-        &:visted {
-            font-size: 20rem;
+        &:visited {
+            font-size: 2rem;
             color: $color-primary;
             display: inline-block;
             text-decoration: none;

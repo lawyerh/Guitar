@@ -180,16 +180,37 @@ body {
   transform: translateY(0); }
 
 .card {
-  perspective: 50rem;
-  -moz-perspective: 50rem; }
+  perspective: 2000rem;
+  -moz-perspective: 2000rem;
+  position: relative;
+  height: 50rem; }
   .card__side {
-    background-color: orange;
     height: 50rem;
+    width: 100%;
     text-align: center;
     font-size: 2rem;
-    transition: all .5s; }
-  .card:hover .card__side {
+    transition: all .5s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3); }
+    .card__side--front {
+      background-color: #fff; }
+    .card__side--back {
+      background-color: green;
+      transform: rotateY(180deg); }
+    .card__side--1 {
+      background-image: linear-gradient(to bottom right, #ffb900, #ff7730); }
+    .card__side--2 {
+      background-image: linear-gradient(to bottom right, #8d3ea0, #360442); }
+    .card__side--3 {
+      background-image: linear-gradient(to bottom right, #2998ff, #5643fa); }
+  .card:hover .card__side--front {
     transform: rotateY(180deg); }
+  .card:hover .card__side--back {
+    transform: rotateY(0); }
 
 .composition {
   position: relative; }

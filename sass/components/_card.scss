@@ -1,0 +1,17 @@
+.card {
+    perspective: 50rem;
+    -moz-perspective: 50rem;
+
+    &__side {
+        background-color: orange;
+        height: 50rem;
+        text-align: center;
+        font-size: 2rem;
+        transition: all .5s;
+    }
+
+    &:hover &__side {
+        transform: rotateY(180deg);
+    }
+
+}

@@ -100,6 +100,10 @@ body {
   .paragraph:not(:last-child) {
     margin-bottom: 3rem; }
 
+.warning-span {
+  font-size: .9rem;
+  font-weight: 700; }
+
 .u-center-text {
   text-align: center; }
 
@@ -219,11 +223,11 @@ body {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
     .card__image--1 {
-      background-image: linear-gradient(to bottom right, #ffb900, #ff7730), url("../img/hangingguitars.jpg"); }
+      background-image: linear-gradient(to bottom right, #ffb900, #ff7730), url("../img/guitars-1.jpg"); }
     .card__image--2 {
-      background-image: linear-gradient(to bottom right, #ffb900, #ff7730), url("../img/hangingguitars.jpg"); }
+      background-image: linear-gradient(to bottom right, #8d3ea0, #360442), url("../img/workshop.jpg"); }
     .card__image--3 {
-      background-image: linear-gradient(to bottom right, #ffb900, #ff7730), url("../img/hangingguitars.jpg"); }
+      background-image: linear-gradient(to bottom right, #2998ff, #5643fa), url("../img/harp.jpg"); }
   .card__heading {
     font-size: 2.4rem;
     font-weight: 300;
@@ -240,6 +244,10 @@ body {
     box-decoration-break: clone; }
     .card__heading-span--1 {
       background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
+    .card__heading-span--2 {
+      background-image: linear-gradient(to right bottom, rgba(141, 62, 160, 0.85), rgba(54, 4, 66, 0.85)); }
+    .card__heading-span--3 {
+      background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85)); }
   .card__details {
     padding: 3rem; }
     .card__details ul {
@@ -252,6 +260,22 @@ body {
         padding: 1rem; }
         .card__details ul li:not(:last-child) {
           border-bottom: 1px solid #eee; }
+  .card__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center; }
+  .card__price-box {
+    margin-bottom: 8rem;
+    color: #fff; }
+  .card__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase; }
+  .card__price-value {
+    font-size: 4rem;
+    font-weight: 100; }
 
 .composition {
   position: relative; }

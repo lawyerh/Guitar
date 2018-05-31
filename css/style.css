@@ -117,6 +117,21 @@ body {
 .u-margin-top-big {
   margin-top: 8rem; }
 
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: .5;
+  overflow: hidden; }
+  .bg-video__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    -webkit-object-fit: cover; }
+
 /* .btn and :state of button
 :link is new unclicked link
 :visited is link after it's been clicked once
@@ -341,7 +356,7 @@ body {
   width: 75%;
   margin: 0 auto;
   box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.2);
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.6);
   border-radius: 4px;
   padding: 6rem;
   padding-left: 9rem;
@@ -458,5 +473,5 @@ body {
   margin-top: -10rem; }
 
 .section-reviews {
-  background-color: #777;
+  position: relative;
   padding: 15rem 0; }

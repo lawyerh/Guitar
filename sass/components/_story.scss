@@ -9,6 +9,10 @@
     font-size: 1.6rem;
     transform: skewX(-12deg);
 
+    &:not(:last-child) {
+        margin-bottom: 5rem;
+    }
+
 
     &__shape {
         position: relative;
@@ -26,7 +30,9 @@
 
     &__image {
         height: 100%;
-        transform: translateX(-4.5rem);
+        transform: translateX(-4.5rem) scale(1.3);
+        backface-visibility: hidden;
+        transition: all .3s;
     }
 
     &__text {
@@ -35,22 +41,25 @@
 
     &__caption {
         position: absolute;
-        top: 50%;
+        top: 60%;
         left: 50%;
-        transform: translate(-50% 0);
+        transform: translate(-50%, 0);
         color: $color-black;
         text-transform: uppercase;
         font-size: 1.7rem;
         text-align: center;
         opacity: 0;
-        transition: all .5;
+        transition: all .3s;
         backface-visibility: hidden;
-
-
     }
 
     &:hover &__caption {
         opacity: 1;
         transform: translate(-50%, -50%);
+    }
+
+    &:hover &__image {
+        transform: translateX(-4.5rem) scale(1);
+        filter: blur(2px) brightness(80%);
     }
 }

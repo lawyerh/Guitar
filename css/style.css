@@ -113,6 +113,9 @@ body {
 .u-margin-bottom-small {
   margin-bottom: 1.4rem; }
 
+.u-margin-top-big {
+  margin-top: 8rem; }
+
 /* .btn and :state of button
 :link is new unclicked link
 :visited is link after it's been clicked once
@@ -159,6 +162,16 @@ body {
 
 .btn--white::after {
   background-color: #fff; }
+
+.btn--purple {
+  background-color: #902ea8;
+  color: #fff; }
+  .btn--purple:hover {
+    background-color: #fff;
+    color: #902ea8; }
+
+.btn--purple::after {
+  background-color: #902ea8; }
 
 .btn--animate {
   animation: moveInBottom 1s ease-in 1.5s;
@@ -221,7 +234,9 @@ body {
     height: 23rem;
     background-blend-mode: multiply;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px; }
     .card__image--1 {
       background-image: linear-gradient(to bottom right, #ffb900, #ff7730), url("../img/guitars-1.jpg"); }
     .card__image--2 {

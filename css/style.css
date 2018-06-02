@@ -590,7 +590,10 @@ body {
   position: fixed;
   top: 6rem;
   right: 6rem;
-  z-index: 200; }
+  z-index: 200;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15);
+  text-align: center;
+  cursor: pointer; }
 
 .navigation__background {
   height: 6rem;
@@ -601,18 +604,22 @@ body {
   right: 6.5rem;
   background-image: radial-gradient(#8d3ea0, #360442);
   z-index: 100;
-  transform: scale(80); }
+  transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1); }
 
 .navigation__nav {
   height: 100%;
-  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 150; }
+  z-index: 150;
+  transition: all .4s;
+  backface-visibility: hidden;
+  opacity: 0;
+  width: 0; }
 
 .navigation__list {
   position: absolute;
+  width: 100%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -631,13 +638,55 @@ body {
   text-transform: uppercase;
   padding: 1rem 2rem;
   background-size: 220%;
-  transition: all .4s;
+  transition: all .8s;
   background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%); }
 
 .navigation__link:hover, .navigation__link:active {
   background-position: 100%;
   color: #902ea8;
   transform: translateX(1rem); }
+
+.navigation__checkbox:checked ~ .navigation__background {
+  transform: scale(100); }
+
+.navigation__checkbox:checked ~ .navigation__nav {
+  width: 100%;
+  opacity: 1; }
+
+.navigation__icon {
+  position: relative;
+  margin-top: 3.2rem; }
+  .navigation__icon, .navigation__icon::before, .navigation__icon::after {
+    width: 3rem;
+    height: 2px;
+    background-color: #333;
+    display: inline-block;
+    transition: all .2s; }
+  .navigation__icon::before, .navigation__icon::after {
+    content: "";
+    position: absolute;
+    left: 0; }
+  .navigation__icon::before {
+    top: -.8rem; }
+  .navigation__icon::after {
+    top: .8rem; }
+
+.navigation__button:hover .navigation__icon::before {
+  top: -1rem; }
+
+.navigation__button:hover .navigation__icon::after {
+  top: 1rem; }
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon {
+  background-color: transparent; }
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon::before {
+  top: 0;
+  transform: rotate(135deg); }
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon::after {
+  top: 0;
+  transform: rotate(-135deg); }
 
 .section-about {
   background-color: #f7f7f7;
